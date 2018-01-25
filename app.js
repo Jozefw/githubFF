@@ -13,6 +13,7 @@ userSearched.addEventListener('keyup', (e)=>{
         .then(data=>{
         if(data.profile.message === "Not Found"){
             // show alert in UI file
+            ui.showAlert('No user found!!','alert alert-danger');
         }else{
             // show profile
             ui.showProfile(data.profile);
@@ -20,5 +21,6 @@ userSearched.addEventListener('keyup', (e)=>{
         })
     }else{
         // clear profile
+        ui.clearProfile();
     }
 })

@@ -30,4 +30,26 @@ class UI{
         <div id="repos"></div>
         `
     }
+    showAlert(message,className){
+        // create div
+        const div = document.createElement('div');
+        // create div class name
+        div.className = className;
+        // create text inside div
+        div.appendChild(document.createTextNode(message));
+        // create parent space
+        const container = document.querySelector('.searchContainer');
+        // get search div 
+        const search = document.querySelector('.search');
+        container.insertBefore(div,search);
+    }
+    // clear multiple alerts
+    clearAlert(){
+        
+    } 
+
+    // clear input area
+    clearProfile(){
+        this.profile.innerHTML = "";
+    }
 }
