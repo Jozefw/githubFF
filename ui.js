@@ -31,6 +31,8 @@ class UI{
         `
     }
     showAlert(message,className){
+        // call to clear pre-existing alerts
+        this.clearAlert();
         // create div
         const div = document.createElement('div');
         // create div class name
@@ -42,12 +44,18 @@ class UI{
         // get search div 
         const search = document.querySelector('.search');
         container.insertBefore(div,search);
+
+        setTimeout(()=>{
+            this.clearAlert();
+        }, 3000)
     }
     // clear multiple alerts
     clearAlert(){
-        
-    } 
-
+        const currentAlert = document.querySelector('.alert');
+            if(currentAlert){
+                currentAlert.remove();
+            }
+    }
     // clear input area
     clearProfile(){
         this.profile.innerHTML = "";
